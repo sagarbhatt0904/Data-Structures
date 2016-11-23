@@ -34,9 +34,7 @@ int main() {
         ifstream fin(file); 
         std::string text;
         getline(fin, text);
-        // cout<<i<<" "<<text.length()<<endl;;
     std::stack <Bracket> opening_brackets_stack;
-   // cout<<text<<"\n";
    
     for (int position = 0; position < text.length()-1; position++) {
         char next = text[position];
@@ -45,12 +43,9 @@ int main() {
             Bracket br = Bracket(next,position);
             
             opening_brackets_stack.push(br);
-
-            // Process opening pbracket, write your code here
         }
 
         if (next == ')' || next == ']' || next == '}') {
-        // Process closing bracket, write your code herer 
             if(!opening_brackets_stack.empty()){
                 if(opening_brackets_stack.top().Matchc(next))
                     opening_brackets_stack.pop(); 
@@ -68,8 +63,6 @@ int main() {
     text.clear();
     fin.close();
     }
-    
-    // Printing answer, write your code here
     
     return 0;
 }
